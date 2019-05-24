@@ -1,6 +1,9 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+[![Travis build
+status](https://travis-ci.org/lefkiospaikousis/LPfars.svg?branch=master)](https://travis-ci.org/lefkiospaikousis/LPfars)
+
 # LPfars
 
 The goal of LPfars is to plot the density of fatal injuries on a map
