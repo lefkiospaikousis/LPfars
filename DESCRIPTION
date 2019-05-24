@@ -14,3 +14,7 @@ LazyData: true
 URL: https://github.com/lefkiospaikousis/LPfars
 BugReports: https://github.com/lefkiospaikousis/LPfars/issues
 RoxygenNote: 6.1.1
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitrvign
