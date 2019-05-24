@@ -1,14 +1,16 @@
 Package: LPfars
-Title: What the Package Does (One Line, Title Case)
+Title: Plot Fatal Injuries
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Lefkios",
+           family = "Paikousis",
            role = c("aut", "cre"),
-           email = "first.last@example.com")
-Description: What the package does (one paragraph).
+           email = "lefkiospaikousis@yahoo.com")
+Description: This is a package built for the coursers Building R Packages course. It summarises and plots a map
+   for fatal injuries
 License: What license it uses
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/lefkiospaikousis/LPfars
 BugReports: https://github.com/lefkiospaikousis/LPfars/issues
+RoxygenNote: 6.1.1
