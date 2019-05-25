@@ -16,7 +16,7 @@ Thsi function returns a tibble
 This is a a function that reads a csv file into R
 }
 \details{
-The function tests wether the file name exists in the current working directory and returns an error message if not.    
+The function tests wether the file name exists in the current working directory and returns an error message if not.
     It also imports the \code{read_csv} function from package \code{readr}
 }
 \examples{

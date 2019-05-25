@@ -6,15 +6,22 @@ Authors@R:
            family = "Paikousis",
            role = c("aut", "cre"),
            email = "lefkiospaikousis@yahoo.com")
-Description: This is a package built for the coursers Building R Packages course. It summarises and plots a map
-   for fatal injuries
-License: What license it uses
+Description: This is a package that reads data, summarises and plots a map of fatal injuries based on the FARS census.
+Depends: R (>= 3.1.0)
+License: CC0
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/lefkiospaikousis/LPfars
 BugReports: https://github.com/lefkiospaikousis/LPfars/issues
+Imports:
+    dplyr,
+    readr,
+    maps,
+    tidyr,
+    magrittr
 RoxygenNote: 6.1.1
 Suggests: 
     knitr,
-    rmarkdown
-VignetteBuilder: knitrvign
+    rmarkdown,
+    testthat
+VignetteBuilder: knitr

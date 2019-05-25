@@ -20,7 +20,7 @@ It reads a numeric value representing the state and a year value. It reads the c
 that holds the longitude and langitude of the incidents in the particular year. The funtion filters the incidents ny the given state
 }
 \details{
-In the case of wrong state numerical representation, or zero fatal injuries for that state in the particular year, 
+In the case of wrong state numerical representation, or zero fatal injuries for that state in the particular year,
 or there is no csv file in the current working directory under the specified year value, an error message is provided
 }
 \examples{

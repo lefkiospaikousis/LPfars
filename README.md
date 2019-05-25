@@ -25,12 +25,31 @@ This is a basic example which shows you how to solve a common problem:
 ## basic example code
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date.
+## Functions
 
-You can also embed plots, for example:
+The FARSread package has three functions:
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
+  - The `fars_read` function for reading the data in R as a csv file
 
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub\!
+  - The `fars_summarize_years` function for comparing monthly summaries
+
+  - The `The fars_map_state` function to create a map plot where the
+    accidents occurred
+
+  - The `make_filename` function that concatenates string values and
+    creates a filename in a standard format of `accident_YEAR.csv.bz2`
+
+### Notes
+
+The package re-exports the `%>%` operator from the package `magritrr` so
+you can perfom exploratory analysis the `tidyverse` way\!
+
+## What is the FARS
+
+The Fatality Analysis Reporting System (FARS) contains data derived from
+a US nationwide census regarding fatal injuries suffered in motor
+vehicle traffic crashes
+
+See
+[here](https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars)
+on how to create datasets and use the package

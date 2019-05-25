@@ -13,12 +13,12 @@ fars_read_years(years)
 A list of tibbles - one for each year
 }
 \description{
-This is a function that reads multiple csv files in the standard format of \code{accident_YEAR.csv.bz2} into R.  
-The function reads a vector or list of year values and calls \code{make_filename} to create the csv file names 
+This is a function that reads multiple csv files in the standard format of \code{accident_YEAR.csv.bz2} into R.
+The function reads a vector or list of year values and calls \code{make_filename} to create the csv file names
 and then calls \code{fars_read} to read in the csv files
 }
 \details{
-An error message is provided if no csv files are present in the current working directory under the 
+An error message is provided if no csv files are present in the current working directory under the
 year values that are provided,
 }
 \examples{

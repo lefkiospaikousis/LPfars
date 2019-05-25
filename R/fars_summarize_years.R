@@ -7,6 +7,7 @@
 #'
 #' @param years A vector or list of year values
 #' @return A table of frequencies by year (columns) and month (rows)
+#' @importFrom dplyr bind_rows group_by summarize
 #' @importFrom magrittr "%>%"
 #' @importFrom tidyr spread
 #' @examples
@@ -16,6 +17,9 @@
 #' }
 #' @export
 fars_summarize_years <- function(years) {
+
+  year <- MONTH <- n <- NULL
+
   dat_list <- fars_read_years(years)
   dplyr::bind_rows(dat_list) %>%
     dplyr::group_by(year, MONTH) %>%
