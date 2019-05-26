@@ -1,10 +1,10 @@
 ---
-title: "Vignette Title"
-author: "Vignette Author"
+title: "LPfars: How it works"
+author: "Lefkios Paikousis"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{LPfars: How it works}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -16,50 +16,71 @@ knitr::opts_chunk$set(
 )
 ```
 
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
+This is a vignette that demontrates the use of the 3 main functions of the `LPfars` package
 
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
+- `fars_read`: Read a single dataset stored on your disk
+- `fars_summarize_years`: Summarize the number of observations by year
+- `fars_map_state`: Visualize the accidents in the US map
 
-## Vignette Info
+# Read FARS Data
 
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
+Through `fars_read`, we can read the FARS data that was saved by csv file with ".bz2" extension. 
 
-## Styles
+_NOTE:_ The LPfars package comes with example raw datasets. The location of the example raw datasets on your disk can be accessed by typing
 
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
+`system.file("extdata", package = "LPfars")`
 
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
+To access the name of a single file, type    
 
-## Figures
+`system.file("extdata", "the_file_name", package = "LPfars")`
 
-The figure sizes have been customised so that you can easily put two images side-by-side. 
+```{r}
+library(LPfars)
 
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
+file <- system.file("extdata", "accident_2013.csv.bz2", package = "LPfars")
+
+data <- fars_read(file)
+
+print(data)
+
 ```
 
-You can enable figure captions by `fig_caption: yes` in YAML:
 
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
+# Summary of FARS Data
 
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
+The `fars_summarize_years` returns a summary table with the number of monthly accident cases (row) and the defined year(s) (column). Here the input parameter canbe a numeric vector or a list of the year values.
 
-## More Examples
+```{r}
 
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
+# Set the working directory to the location of the files
+# This is for demontrating purposes. Once you have your datasets in your current working directory, you will not have to do this
 
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
+files_location = system.file("extdata", package = "LPfars")
+
+setwd(files_location)
+
+fars_summarize_years(2013:2015)
+
 ```
+_NOTE:_ The function `fars_summarise_years` calls the function `fars_read_years`to read multiple FARS data files on your disk
 
-Also a quote using `>`:
 
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
+# Plot the density of accident locations
+
+The `fars_map_state` returns a map with the plot of the state with accident locations. The State index was defined from 1 to 56.
+
+```{r}
+
+files_location = system.file("extdata", package = "LPfars")
+setwd(files_location)
+
+# States are recored as integers. Lets have a look at them
+unique(data$STATE) 
+
+
+# Lets pick state # 1 at year 2013
+
+ fars_map_state(1, 2013)
+
+
+```
