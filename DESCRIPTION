@@ -1,6 +1,6 @@
 Package: LPfars
-Title: Plot Fatal Injuries
-Version: 0.0.0.9000
+Title: Explore and Analyse Data from Fatal Analysis Reporting System
+Version: 0.1.0.9000
 Authors@R: 
     person(given = "Lefkios",
            family = "Paikousis",
