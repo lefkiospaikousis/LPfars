@@ -4,7 +4,7 @@
 [![Travis build
 status](https://travis-ci.org/lefkiospaikousis/LPfars.svg?branch=master)](https://travis-ci.org/lefkiospaikousis/LPfars)
 
-LPfars is a package that was build for the purposes of the coursera
+LPfars is a package that was built for the purposes of the Coursera
 course [Building R Packages](https://www.coursera.org/learn/r-packages)
 
 # LPfars
